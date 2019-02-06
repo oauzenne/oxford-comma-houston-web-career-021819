@@ -1,9 +1,8 @@
- if array.length == 1 
-      array.join
-    elsif array.length == 2
-      array.join(" and ")
-    else array.length >= 3
-      last_item = array[-1]
-      array.slice!(-1)
-      array.join(", ") + ", and " + last_item
-  end
+  case array.length 
+end 	when 1
+  "#{array[0]}"
+when 2
+  array[0..1].join(" and ")
+else 
+  array[0...-1].join(", ") << ", and #{array[-1]}"
+end 
