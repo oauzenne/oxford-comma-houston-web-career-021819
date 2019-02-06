@@ -1,11 +1,9 @@
-def oxford_comma(array)
-
-   if array.length == 1
-end 	    array[0]
-  elsif array.length == 2
-    array[0]+" and "+array[1]
-  else
-  array[-1] = "and "+array[-1]
-  array.join(", ")
-end
-end
+ if array.length == 1 
+      array.join
+    elsif array.length == 2
+      array.join(" and ")
+    else array.length >= 3
+      last_item = array[-1]
+      array.slice!(-1)
+      array.join(", ") + ", and " + last_item
+  end
